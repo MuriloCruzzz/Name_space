@@ -1,0 +1,31 @@
+// C05EX21.CPP
+
+#include <iostream>
+using namespace std;
+
+int VALOR = 3;
+
+namespace escopo1
+{
+  int VALOR = 2;
+  namespace escopo2
+  {
+    int VALOR = 1;
+  }
+}
+
+int main(void)
+{
+
+  int VALOR = 4;
+
+  cout << VALOR << endl; // memoria local
+  cout << ::VALOR << endl;  // memoria global
+  cout << escopo1::VALOR << endl; // memoria do primeiro escopo
+  cout << escopo1::escopo2::VALOR << endl; // memoria do segundo escopoo
+
+  cout << endl;
+  cout << "Tecle <Enter> para encerrar... ";
+  cin.get();
+  return 0;
+}
